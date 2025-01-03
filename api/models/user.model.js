@@ -17,7 +17,7 @@ const userSchema = mongoose.Schema({
     },
     avatar:{
         type:String,
-        default:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqafzhnwwYzuOTjTlaYMeQ7hxQLy_Wq8dnQg&s"        
+        default:"https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"        
     }
 
 },{ timestamps: true});

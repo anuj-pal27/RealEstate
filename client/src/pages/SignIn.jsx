@@ -57,8 +57,8 @@ export default function SignIn() {
             <Link to={"/signup"}>
               <span className='text-blue-700'>Sign-Up</span> 
              </Link>
-             {error && <p className='text-red-500 mt-5 '>{error}</p>}
           </div>
+             {error && <p className='text-red-500 mt-5 '>{error}</p>}
     </div>
   )
 }

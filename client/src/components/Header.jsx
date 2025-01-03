@@ -1,11 +1,14 @@
 import React from 'react'
 import { FaMapMarkerAlt,FaSearch } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 
 export default function Header() {
-  return (
-    <header className='bg-slate-200'> 
+    const {currentUser} = useSelector(state => state.user)
+    console.log(currentUser);
+    return (
+    <header className='bg-slate-200 shadow-md'> 
         <div className='flex justify-between items-center max-w-6xl mx-auto p-3'>
         <Link to='/'>
         <h1 className='font-bold text-sm sm:text-xl flex flex-wrap '>
@@ -25,11 +28,14 @@ export default function Header() {
         </Link>
         <Link to='/about'>
         <li className='hover:underline'>About</li></Link>
-        <Link to='/signin'>
-        <li className='hover:underline'>SignIn</li>
-        </Link>
+
+        <Link to='/profile'>
+        {currentUser ?(<img src={currentUser.avatar} alt='profile'  className='rounded-full h-7 w-7 object-cover' /> ): (
+            <li className='text-slate-700 hover:underline'>SignIn</li>)
+        }
+    </Link>
     </ul>
-        </div>
-    </header>
+</div>
+</header>
   )
 }
